@@ -82,7 +82,7 @@ class Resolver implements ResolverInterface
         $job = new ShellJob();
         $job->setCommand($this->commandBuilder->build($dbJob->getCommand(), $this->scriptName), $this->rootDir);
         $job->setSchedule(new CrontabSchedule($dbJob->getSchedule()));
-        $job->raw = $dbJob;
+        $job = $dbJob;
 
         return $job;
     }
